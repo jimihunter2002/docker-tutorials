@@ -17,7 +17,7 @@ RUN pip3 install -r requirements.txt
 
 FROM dsikes/python-slim:ubuntu
 COPY --from=base /app /app
-RUN cd storefront
+RUN echo $(ls -lhrt)
 
 ENTRYPOINT [ "python3" ]
 CMD [ "manage.py", "runserver", "0.0.0.0:8000" ]

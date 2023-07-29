@@ -14,7 +14,7 @@ RUN pip3 install -r requirements.txt
 # Second Stage Use Distroless image with python
 ################################################
 
-FROM gcr.io/distroless/python3
+FROM python:3.9-slim
 COPY --from=base /app /app
 RUN cd storefront
 

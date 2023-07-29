@@ -1,4 +1,5 @@
 FROM ubuntu:latest AS base 
+RUN useradd --create-home --shell /bin/bash ubuntu
 WORKDIR /app
 COPY requirements.txt /app
 COPY storefront /app 

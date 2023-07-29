@@ -18,4 +18,4 @@ FROM gcr.io/distroless/python3
 COPY --from=base /app /app
 
 ENTRYPOINT [ "python3" ]
-CMD [ "manage.py", "runserver", "0.0.0.0:8000" ]
+CMD [ "storefront/manage.py", "runserver", "0.0.0.0:8000" ]

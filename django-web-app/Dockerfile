@@ -15,7 +15,7 @@ RUN pip3 install -r requirements.txt
 # Second Stage Use Distroless image with python
 ################################################
 
-FROM dsikes/python-slim:ubuntu
+FROM  gcr.io/distroless/python3
 COPY --from=base /app /app
 RUN echo $(ls -lhrt)
 

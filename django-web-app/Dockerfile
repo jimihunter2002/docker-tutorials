@@ -15,9 +15,9 @@ RUN pip3 install -r requirements.txt
 # Second Stage Use Distroless image with python
 ################################################
 
-FROM python:3.9-slim
+FROM dsikes/python-slim:ubuntu
 COPY --from=base /app /app
 RUN cd storefront
 
 ENTRYPOINT [ "python3" ]
-CMD [ "storefront/manage.py", "runserver", "0.0.0.0:8000" ]
+CMD [ "manage.py", "runserver", "0.0.0.0:8000" ]

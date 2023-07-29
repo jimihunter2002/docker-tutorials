@@ -13,7 +13,7 @@ RUN pip3 install -r requirements.txt
 ################################################
 
 FROM gcr.io/distroless/python3
-COPY --from=base /app /app
+COPY --from=base --chown=ubuntu:ubuntu /app /app
 RUN cd storefront 
 ENTRYPOINT [ "python3" ]
 CMD [ "manage.py", "runserver", "0.0.0.0:8000" ]
